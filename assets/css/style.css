@@ -37,8 +37,13 @@ header {
     align-items: center;
 
     height: 64px;
-    transition: background-color 0.5s;  
+    transition: background-color 0.5s;
 }
+
+header.scrolled {
+    background-color: #ffffff;
+}
+
 
 header h1, header nav {
     padding: 0 48px 0 48px;
