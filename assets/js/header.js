@@ -5,7 +5,6 @@ const headerTag = document.querySelector("header")
 
 const toggleHeader = function () {
     const pixels = window.pageYOffset
-    const alpha = pixels / 1000
     
     if (pixels > 60) {
         headerTag.classList.add("scrolled")
@@ -16,8 +15,9 @@ const toggleHeader = function () {
 
 const fadeBox = function () {
     const pixels = window.pageYOffset
+    const alpha = Math.min(pixels / 1000,0.35)
     
-    headerTag.style.boxShadow = `0 0 10px rgba(0,0,0,$(alpha))`
+    headerTag.style.boxShadow = `0 0 10px rgba(0,0,0,${alpha})`
 }
 
 toggleHeader() // runs the function instantly on pageload
