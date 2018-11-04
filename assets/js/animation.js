@@ -14,7 +14,7 @@ const fadeIn = function () {
         const tagTop = tag.getBoundingClientRect().top
         const tagBottom = tag.getBoundingClientRect().bottom
 
-        if (tagTop < window.innerHeight && tagBottom > 0) { // && tagBottom > 0 and else statement adds fadeIn when scrolling back up the page as well as down
+        if (tagTop < window.innerHeight /*&& tagBottom > 0*/) { // && tagBottom > 0 and else statement adds fadeIn when scrolling back up the page as well as down
             tag.style.animation = `fadein 1s ${delay}s both` // using keyframes in css
             delay = delay + 0.2 // this fades elements in a cascading style on the page
         }
@@ -37,3 +37,5 @@ document.addEventListener("scroll", function () {
 window.addEventListener("resize", function () {
     fadeIn()
 })
+
+// TODO: Change the fadeIn animation so that once an element has faded in for the first time it doesn't disappear and "re-fade in"
